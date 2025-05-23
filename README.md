@@ -1,39 +1,96 @@
-# React TypeScript Tutorial Project
+# 🎨 MintMuse
 
-A comprehensive React 18 project built with TypeScript, following modern best practices and component-based architecture.
+**MintMuse** is a beautiful, Web3-enabled NFT gallery built with **Next.js**, **TypeScript**, and **RainbowKit**. It allows users to connect their wallets, view owned NFTs, and browse on-chain collections in an immersive, responsive interface.
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn package manager
-- Basic knowledge of JavaScript/TypeScript
+## 🛠 Tech Stack
 
-### Installation
+* ⚛️ **Next.js** (App Router)
+* 📘 **TypeScript**
+* 🎨 **Tailwind CSS** + Radix UI
+* 🔌 **RainbowKit** + **WAGMI**
+* 🔗 **Ethers.js**
+* 🖼️ **NFTPort** or **Alchemy NFT API**
+* 🗃️ **IPFS support**
 
-1. Clone the repository:
+---
 
-```
-git clone https://github.com/aryehky/react-typescript-tutorial.git
-```
+## 💡 Features
 
-2. Navigate to the project directory:
+* 🔐 Connect wallet (MetaMask, Coinbase, WalletConnect)
+* 🧾 Fetch NFTs for connected address
+* 🖼️ Display NFT metadata (image, name, traits)
+* 🔍 View collection details and token properties
+* 🌐 Cross-chain support (Ethereum, Polygon)
+* 📱 Mobile-responsive layout
 
-```
-cd react-typescript-tutorial
-```
+---
 
-3. Install dependencies:
+## 🔧 Installation
 
-```
+```bash
+git clone https://github.com/aryehky/mintmuse.git
+cd mintmuse
 npm install
+npm dev
 ```
 
-4. Start the development server:
+---
+
+## 🌍 .env.local
+
+Create a `.env.local` file:
+
+```bash
+NEXT_PUBLIC_ALCHEMY_KEY=your_key_here
+NEXT_PUBLIC_SUPPORTED_CHAIN=ethereum
+```
+
+You can use Alchemy or NFTPort APIs for fetching NFT metadata.
+
+---
+
+## 📁 Directory Structure
 
 ```
-npm start
+/components   → UI blocks like Gallery, Card, Header
+/hooks        → useWallet, useNFTs, etc.
+/pages        → Next.js pages
+/public       → Static assets
+/styles       → Tailwind + globals
+/utils        → helpers for NFT parsing, IPFS
 ```
 
-5. Open your browser and navigate to `http://localhost:3000` to see the app in action.
+---
 
+## 🚀 Roadmap
+
+* ✅ NFT Gallery by wallet
+* ✅ Alchemy + IPFS NFT metadata
+* ⏳ Collection search
+* ⏳ Wallet ENS support
+* ⏳ Custom token contract support
+
+---
+
+## 🤝 Contributing
+
+Want to add features? Fork + PR! Run:
+
+```bash
+pnpm lint
+pnpm format
+```
+
+---
+
+## 📜 License
+
+MIT © 2025 \[Your Name or Org]
+
+---
+
+## 🧪 Live Demo
+
+> Coming soon: [https://mintmuse.xyz](https://mintmuse.xyz)
