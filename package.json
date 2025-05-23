@@ -1,0 +1,20 @@
+{
+  "name": "mint-muse",
+  "version": "1.0.0",
+  "description": "**MintMuse** is a beautiful, Web3-enabled NFT gallery built with **Next.js**, **TypeScript**, and **RainbowKit**. It allows users to connect their wallets, view owned NFTs, and browse on-chain collections in an immersive, responsive interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryehky/mint-muse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryehky/mint-muse/issues"
+  },
+  "homepage": "https://github.com/aryehky/mint-muse#readme"
+}
