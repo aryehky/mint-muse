@@ -1,12 +1,15 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Fredoka } from 'next/font/google'
 import { Providers } from './providers'
 
-const inter = Inter({ subsets: ['latin'] })
+const fredoka = Fredoka({ 
+  subsets: ['latin'],
+  variable: '--font-fredoka',
+})
 
 export const metadata = {
-  title: 'MintMuse - NFT Gallery',
-  description: 'A beautiful Web3-enabled NFT gallery built with Next.js and RainbowKit',
+  title: 'MintMuse - Sweet NFT Gallery',
+  description: 'A delightful candy-themed Web3-enabled NFT gallery built with Next.js and RainbowKit',
 }
 
 export default function RootLayout({
@@ -15,9 +18,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
+    <html lang="en" className={fredoka.variable}>
+      <body className={`${fredoka.className} bg-gradient-to-br from-candy-pink/10 via-candy-blue/10 to-candy-purple/10`}>
+        <div className="min-h-screen">
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   )

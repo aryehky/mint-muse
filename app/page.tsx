@@ -32,7 +32,7 @@ export default function Home() {
           {/* Welcome Text Image */}
           <div className="relative w-full mx-auto aspect-[7/1] mb-2">
             <Image
-              src="/mint-muse-company-name-vertical-stack.png"
+              src="/welcome-to-mint-must-text.png"
               alt="Welcome to MintMuse"
               fill
               className="object-contain"
