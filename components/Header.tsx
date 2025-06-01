@@ -1,31 +1,58 @@
+'use client';
+
 import Link from 'next/link'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
+import Image from 'next/image'
 
 export function Header() {
   return (
-    <header className="border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              MintMuse
-            </span>
+    <header className="relative z-10 pl-10 w-full h-[80px] bg-orange-200 rounded-b-3xl shadow-md flex justify-between items-center px-6 py-4 font-fredoka">
+          {/* Logo */}
+          <Link 
+            href="/" 
+            className="hover:scale-105 transition-transform"
+          >
+            <Image
+              src="/mint-muse-company-name-horizontal-stack.png"
+              alt="MintMuse"
+              width={200}
+              height={60}
+              className="object-contain"
+            />
           </Link>
-          <nav className="flex items-center space-x-4">
-            <Link
-              href="/"
-              className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+
+      {/* Navigation */}
+      <nav className="flex items-center gap-8 text-lg text-pink-800">
+        <Link href="/gallery" className="hover:text-pink-600 transition-colors">
+          Gallery
+        </Link>
+        <Link href="/collections" className="hover:text-pink-600 transition-colors">
+          Collections
+        </Link>
+        <ConnectButton.Custom>
+          {({ openConnectModal }) => (
+            <button
+              onClick={openConnectModal}
+              className="bg-pink-500 hover:bg-pink-600 text-white font-bold px-4 py-2 rounded-full shadow-md transition-all"
             >
-              Gallery
-            </Link>
-            <Link
-              href="/collections"
-              className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >
-              Collections
-            </Link>
-          </nav>
+              Connect Wallet
+            </button>
+          )}
+        </ConnectButton.Custom>
+      </nav>
+
+      {/* Decorative Emojis */}
+      <div className="absolute top-0 left-0 w-16 h-16 -translate-x-1/2 -translate-y-1/2">
+        <div className="w-full h-full text-4xl animate-float" style={{ animationDelay: '0.2s' }}>
+          🍬
+        </div>
+      </div>
+      <div className="absolute top-0 right-0 w-16 h-16 translate-x-1/2 -translate-y-1/2">
+        <div className="w-full h-full text-4xl animate-float" style={{ animationDelay: '0.5s' }}>
+          🍭
         </div>
       </div>
     </header>
   )
-} 
+}
+
