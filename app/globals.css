@@ -2,18 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Luckiest+Guy&display=swap');
+
 @layer base {
   body {
-    @apply bg-light dark:bg-dark text-dark dark:text-light;
+    @apply bg-gradient-to-br from-candy-pink/10 via-candy-blue/10 to-candy-purple/10 text-dark dark:text-light min-h-screen;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-candy-pink dark:text-candy-yellow;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors;
+    @apply px-6 py-3 bg-gradient-to-r from-candy-pink to-candy-purple text-white rounded-full 
+           font-display tracking-wider uppercase shadow-lg hover:shadow-xl 
+           hover:scale-105 transform transition-all duration-300 animate-float;
   }
   
   .card {
-    @apply bg-white dark:bg-dark/50 rounded-xl shadow-lg p-4 hover:shadow-xl transition-shadow;
+    @apply bg-white/80 dark:bg-dark/50 rounded-3xl shadow-xl p-6 
+           border-candy border-candy-pink hover:border-candy-blue
+           transition-all duration-300 hover:scale-105 backdrop-blur-sm;
+  }
+
+  .candy-border {
+    @apply relative p-1 rounded-2xl;
+    background: linear-gradient(45deg, 
+      theme('colors.candy.pink'), 
+      theme('colors.candy.yellow'),
+      theme('colors.candy.blue'),
+      theme('colors.candy.purple')
+    );
+  }
+
+  .candy-border > * {
+    @apply bg-white dark:bg-dark/90 rounded-xl;
+  }
+
+  .candy-stripe-border {
+    border: 8px solid transparent;
+    border-image: repeating-linear-gradient(
+      45deg,
+      theme('colors.candy.red'),
+      theme('colors.candy.red') 10px,
+      white 10px,
+      white 20px
+    ) 8;
+    border-image-slice: 1;
+  }
+} 
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-candy-pink via-candy-purple to-candy-blue;
   }
 } 
