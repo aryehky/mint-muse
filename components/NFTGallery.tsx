@@ -45,7 +45,12 @@ export function NFTGallery() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
       {nfts.map((nft) => (
-        <NFTCard key={`${nft.contract.address}-${nft.tokenId}`} nft={nft} />
+        <NFTCard 
+          key={nft.contract?.address 
+            ? `${nft.contract.address}-${nft.tokenId}` 
+            : nft.tokenId} 
+          nft={nft} 
+        />
       ))}
     </div>
   )
