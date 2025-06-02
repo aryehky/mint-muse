@@ -1,32 +1,45 @@
 'use client';
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import Image from 'next/image'
 
 export function Header() {
+  const pathname = usePathname()
+
   return (
-    <header className="relative z-10 pl-10 w-full h-[80px] bg-orange-200 rounded-b-3xl shadow-md flex justify-between items-center px-6 py-4 font-fredoka">
-          {/* Logo */}
-          <Link 
-            href="/" 
-            className="hover:scale-105 transition-transform"
-          >
-            <Image
-              src="/mint-muse-company-name-horizontal-stack.png"
-              alt="MintMuse"
-              width={200}
-              height={60}
-              className="object-contain"
-            />
-          </Link>
+    <header className="sticky top-0 z-50 pl-10 w-full h-[80px] bg-orange-200 rounded-b-3xl shadow-md flex justify-between items-center px-6 py-4 font-fredoka">
+      {/* Logo */}
+      <Link 
+        href="/" 
+        className="hover:scale-105 transition-transform"
+      >
+        <Image
+          src="/mint-muse-company-name-horizontal-stack.png"
+          alt="MintMuse"
+          width={200}
+          height={60}
+          className="object-contain"
+        />
+      </Link>
 
       {/* Navigation */}
       <nav className="flex items-center gap-8 text-lg text-pink-800">
-        <Link href="/gallery" className="hover:text-pink-600 transition-colors">
+        <Link 
+          href="/gallery" 
+          className={`hover:text-pink-600 transition-colors ${
+            pathname === '/gallery' ? 'text-pink-600 font-bold' : ''
+          }`}
+        >
           Gallery
         </Link>
-        <Link href="/collections" className="hover:text-pink-600 transition-colors">
+        <Link 
+          href="/collections" 
+          className={`hover:text-pink-600 transition-colors ${
+            pathname === '/collections' ? 'text-pink-600 font-bold' : ''
+          }`}
+        >
           Collections
         </Link>
         <ConnectButton.Custom>
