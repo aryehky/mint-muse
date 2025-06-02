@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { Header } from '@/components/Header'
 
 export default function Home() {
   return (
@@ -23,8 +22,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-      <Header />
 
       {/* Hero Section */}
       <section className="relative z-10 text-center pt-4 px-4">
