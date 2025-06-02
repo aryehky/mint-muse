@@ -36,6 +36,8 @@ module.exports = {
             animation: {
                 'bounce-slow': 'bounce 3s infinite',
                 'float': 'float 3s ease-in-out infinite',
+                'float-slow': 'float 4s ease-in-out infinite',
+                'float-slower': 'float 5s ease-in-out infinite',
             },
             keyframes: {
                 float: {
