@@ -18,7 +18,7 @@ const featuredCollections: Collection[] = [
     id: '1',
     name: 'Candy Kingdom',
     description: 'A magical collection of sweet-themed NFTs from the enchanted Candy Kingdom',
-    imageUrl: '/collections/candy-kingdom.jpg',
+    imageUrl: '/candy-kingdom.png',
     itemCount: 1000,
     floorPrice: '0.5 ETH'
   },
@@ -26,7 +26,7 @@ const featuredCollections: Collection[] = [
     id: '2',
     name: 'Lollipop Legends',
     description: 'Legendary lollipop characters with unique traits and powers',
-    imageUrl: '/collections/lollipop-legends.jpg',
+    imageUrl: '/lollipop-legends.png',
     itemCount: 888,
     floorPrice: '0.8 ETH'
   },
@@ -34,7 +34,7 @@ const featuredCollections: Collection[] = [
     id: '3',
     name: 'Gummy Galaxy',
     description: 'Explore the cosmic world of gummy-inspired digital collectibles',
-    imageUrl: '/collections/gummy-galaxy.jpg',
+    imageUrl: '/gummy-galaxy.png',
     itemCount: 2000,
     floorPrice: '0.3 ETH'
   }
@@ -46,7 +46,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
       whileHover={{ scale: 1.02 }}
       className="bg-white/80 dark:bg-gray-800/80 rounded-xl overflow-hidden shadow-lg border border-white/20"
     >
-      <div className="relative h-48">
+      <div className="aspect-square relative mb-4 bg-gradient-to-b from-white to-candy-yellow/20 rounded-xl overflow-hidden">
         {collection.imageUrl.startsWith('/collections/') ? (
           <PlaceholderImage name={collection.name} />
         ) : (
@@ -54,7 +54,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
             src={collection.imageUrl}
             alt={collection.name}
             fill
-            className="object-cover"
+            className="object-contain p-4"
           />
         )}
       </div>
